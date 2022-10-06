@@ -97,6 +97,7 @@ public class GameFrame {
         Button create = new Button("Create board");
         create.setOnAction((event) -> {
             this.controller.clearGame();
+            startStop.setText("Start");
             pane.getChildren().remove(pane.getChildren().size() - 1);
             GridPane newGrid = buildGrid((int) sizeSlider.getValue());
             pane.getChildren().add(newGrid);
@@ -122,7 +123,7 @@ public class GameFrame {
         Label intervalVal = new Label("100ms");
         Slider intervalSlider = new Slider();
         intervalSlider.setMin(100);
-        intervalSlider.setMax(1000);
+        intervalSlider.setMax(999);
         intervalSlider.valueProperty()
                 .addListener(new ChangeListener<Number>() {
                     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {

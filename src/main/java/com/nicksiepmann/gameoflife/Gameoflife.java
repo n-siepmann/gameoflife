@@ -6,6 +6,7 @@ package com.nicksiepmann.gameoflife;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -22,8 +23,11 @@ public class Gameoflife extends Application {
     public void start(Stage stage) throws Exception {
         GameFrame gameframe = new GameFrame();
         Scene view = new Scene(gameframe.getParent());
+        view.getStylesheets().add("static/styles.css");
         stage.setScene(view);
         stage.setTitle("Conway's Game of Life");
+        stage.getIcons().add(new Image("life.png"));
+
         stage.show();
     }
 
